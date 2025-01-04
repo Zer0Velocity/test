@@ -1,6 +1,6 @@
 esphome:
-  name: bubble-counter-v4
-  friendly_name: bubble counter v4
+  name: bubble-counter-v5
+  friendly_name: bubble counter v5
 
 esp32:
   board: esp32-c6-devkitc-1
