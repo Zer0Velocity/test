@@ -2,3 +2,4 @@
 title: Bubble Counter
 description: Powered by ESPHome and ESP Web Tools
 theme: jekyll-theme-slate
+show_downloads: true
