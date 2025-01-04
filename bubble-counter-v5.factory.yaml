@@ -1,6 +1,7 @@
 esphome:
   name: bubble-counter-v5
   friendly_name: bubble counter v5
+  name_add_mac_suffix: true
 
 esp32:
   board: esp32-c6-devkitc-1
