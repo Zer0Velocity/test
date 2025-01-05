@@ -28,7 +28,7 @@ jobs:
 
         esphome-version:
           - stable
-          - beta
+
     steps:
       - name: Checkout source code
         uses: actions/checkout@v4.1.7
