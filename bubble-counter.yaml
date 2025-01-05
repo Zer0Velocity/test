@@ -1,0 +1,104 @@
+esphome:
+  name: bubble-counter
+  friendly_name: bubble counter
+  name_add_mac_suffix: true
+
+esp32:
+  board: esp32-c6-devkitc-1
+  flash_size: 8MB
+  variant: esp32c6
+  framework:
+    type: esp-idf
+    version: 5.1.2
+    platform_version: 6.5.0
+    sdkconfig_options:
+      CONFIG_OPENTHREAD_ENABLED: n
+      CONFIG_ENABLE_WIFI_STATION: y
+      CONFIG_USE_MINIMAL_MDNS: y
+      CONFIG_ESPTOOLPY_FLASHSIZE_8MB: y
+      #CONFIG_COMPILER_OPTIMIZATION_SPEED: y
+      
+# fix for logger from luar123 (thanks!)
+# external_components:
+    # - source: github://luar123/esphome@fix_logger
+      # components: [ logger ]
+      # refresh: never
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+
+ota:
+  - platform: esphome
+
+wifi:
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Bubble-Counter"
+    password: "bubbl3ct3r"
+
+captive_portal:
+
+# Setup Wifi via Bluetooth
+esp32_improv:
+  authorizer: none
+
+globals:
+- id: all_total_bubbles
+  type: float
+  restore_value: no
+  initial_value: '0'
+
+- id: bubbles_60sec
+  type: float
+  restore_value: no
+  initial_value: '0'
+
+- id: bubbles_30sec
+  type: float
+  restore_value: no
+  initial_value: '0'
+
+- id: bubbles_15sec
+  type: float
+  restore_value: no
+  initial_value: '0'
+
+- id: bubbles_1sec
+  type: float
+  restore_value: no
+  initial_value: '0'
+  
+- id: lastbps
+  type: float
+  restore_value: no
+  initial_value: '0'
+
+- id: testbps
+  type: float
+  restore_value: no
+  initial_value: '0'
+
+web_server:
+    port: 80
+    version: 3
+    local: true
+    auth:
+        username: admin
+        password: bubbl3
+
+text_sensor:
+  - platform: wifi_info
+    ip_address:
+      name: IP Address
+      entity_category: "diagnostic"
+
+button:
+  - platform: restart
+    name: "Restart CO2 Monitor"
+
+  - platform: factory_reset
+    name: Restart with Factory Default Settings
