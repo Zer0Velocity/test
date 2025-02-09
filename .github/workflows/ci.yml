@@ -45,6 +45,6 @@ jobs:
       - uses: oprypin/find-latest-tag@v1
         with:
           repository: Zer0Velocity/test
-          prefix: 'v1.0.'
+          prefix: '1.0.'
           releases-only: true
         id: find_latest_version
