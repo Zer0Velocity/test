@@ -42,9 +42,3 @@ jobs:
         with:
           yaml-file: ${{ matrix.file }}.factory.yaml
           version: ${{ matrix.esphome-version }}
-      - uses: oprypin/find-latest-tag@v1
-        with:
-          repository: Zer0Velocity/test
-          prefix: '1.0.'
-          releases-only: true
-        id: find_latest_version
