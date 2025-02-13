@@ -16,7 +16,7 @@ jobs:
       files: |
         bubble-counter.factory.yaml
       esphome-version: 2024.12.4
-      combined-name: bubble-counter
+      #### combined-name: bubble-counter
       #### Modify above here to match your project ####
 
       release-summary: ${{ github.event.release.body }}
