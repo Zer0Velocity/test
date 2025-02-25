@@ -1,4 +1,7 @@
 esphome:
+  project:
+    name: esphome.bubble-counter
+    version: dev
   name: bubble-counter
   friendly_name: bubble counter
   name_add_mac_suffix: true
