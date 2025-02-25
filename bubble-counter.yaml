@@ -20,10 +20,10 @@ esp32:
       CONFIG_ESPTOOLPY_FLASHMODE: QIO
       
 # fix for logger from luar123 (thanks!)
- external_components:
-   - source: github://luar123/esphome@fix_logger
-     components: [ logger ]
-     refresh: never
+external_components:
+    - source: github://luar123/esphome@fix_logger
+      components: [ logger ]
+      refresh: never
 
 # Enable logging
 logger:
